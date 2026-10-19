@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"></span>
+            <span class="sidebar-title">UniTutor</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('home') }}" class="nav-item">Home</a>
+            <a href="{{ url_for('courses') }}" class="nav-item active">Courses</a>
+            <a href="{{ url_for('recorder') }}" class="nav-item"> Audio Recorder</a>
+            <a href="#" class="nav-item">My PDFs</a>
+            <a href="#" class="nav-item">Settings</a>
+            <a href="{{ url_for('login') }}" class="nav-item">Login</a>
+        </nav>
+    </aside>
+
+    <div class="main">
+
+        <div class="topbar">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <h1>Courses</h1>
+        </div>
+
+        <div class="app-wrapper">
+
+            <!-- Course list view -->
+            <div id="course-list" class="courses-grid">
+                {% for course_id, course in courses.items() %}
+                <div class="course-card" onclick="showCourse('{{ course_id }}')">
+                    <h2>{{ course.name }}</h2>
+                    <p>{{ course.description }}</p>
+                    <span class="course-arrow">→</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- PDF detail view (hidden by default) -->
+            <div id="course-detail" style="display:none;">
+                <button class="back-btn" onclick="goBack()">← Back to Courses</button>
+                <h2 id="detail-title" style="margin-bottom: 16px; color: #2d3048;"></h2>
+                <div id="pdf-list" class="pdf-list-detail"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script id="courses-data" type="application/json">{{ courses | tojson }}</script>
+<script src="{{ url_for('static', filename='js/courses.js') }}"></script>
+</body>
+</html>

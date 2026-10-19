@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI University Tutor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"></span>
+            <span class="sidebar-title">UniTutor</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('home') }}" class="nav-item">Home</a>
+            <a href="{{ url_for('login') }}" class="nav-item active">Login</a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main">
+
+        <div class="topbar">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <h1>AI University Tutor</h1>
+        </div>
+
+            <div class = "login-container">
+                
+                <div class="login-form">
+                    <h2>Login</h2>
+                    <div class="login-form-contents">
+                        <form id="login-form" method="POST" action="{{ url_for('login') }}">
+                            <input type="text" name="username" placeholder="Username" required>
+                            <input type="password" name="password" placeholder="Password" required>
+                            <button type="submit" class="toggle-btn">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

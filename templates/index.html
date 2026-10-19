@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI University Tutor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"></span>
+            <span class="sidebar-title">UniTutor</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">Home</a>
+            <a href="{{ url_for('courses') }}" class="nav-item">Courses</a>
+            <a href="{{ url_for('recorder') }}" class="nav-item"> Audio Recorder</a>
+            <a href="#" class="nav-item">My PDFs</a>
+            <a href="#" class="nav-item">Settings</a>
+            <a href="{{ url_for('login') }}" class="nav-item">Login</a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main">
+
+        <div class="topbar">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <h1>AI University Tutor</h1>
+        </div>
+
+        <div class="app-wrapper">
+
+            <div class="upload-card">
+                <span class="upload-label">PDF</span>
+                <div class="file-input-wrapper">
+                    <input type="file" id="pdfInput" accept=".pdf">
+                </div>
+                <button class="btn btn-primary" onclick="uploadPDF()">Upload & Start</button>
+                <span id="status-text"></span>
+            </div>
+
+            <div id="chat-box">
+                <div class="msg ai-msg">Ανέβασε πρώτα ένα PDF για να ξεκινήσουμε.</div>
+            </div>
+
+            <div class="input-row">
+                <textarea id="userInput" placeholder="Ask a question about your PDF…" rows="3"
+                    onkeydown="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); }"></textarea>
+                <button class="btn btn-send" onclick="sendMessage()">Send</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

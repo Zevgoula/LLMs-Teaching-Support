@@ -1,0 +1,444 @@
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 0000028b3fa67780] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:01.54, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0000028b3fab0300] using SAR=2766/2771
+[libx264 @ 0000028b3fab0300] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000028b3fab0300] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 0000028b3fab0300] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 0000028b3fa6d640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000028b3fa67a40] video:1KiB audio:27KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 6.024733%
+frame=    1 fps=0.0 q=37.0 Lsize=      29KiB time=00:00:01.00 bitrate= 240.7kbits/s speed=7.95x    
+[libx264 @ 0000028b3fab0300] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 0000028b3fab0300] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0000028b3fab0300] coded y,uvDC,uvAC intra: 0.0% 0.0% 0.0%
+[libx264 @ 0000028b3fab0300] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 0000028b3fab0300] i8c dc,h,v,p: 100%  0%  0%  0%
+[libx264 @ 0000028b3fab0300] kb/s:1.59
+[aac @ 0000028b3fb058c0] Qavg: 65034.035
+https://www.youtube.com/watch?v=KwEuW-cVm3c
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000002048d407780] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:03.67, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000002048d450580] using SAR=2766/2771
+[libx264 @ 000002048d450580] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002048d450580] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000002048d450580] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000002048d40d640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000002048d407a40] video:1KiB audio:71KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.950213%
+frame=    3 fps=0.0 q=-1.0 Lsize=      74KiB time=00:00:03.00 bitrate= 201.9kbits/s speed=19.9x    
+[libx264 @ 000002048d450580] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000002048d450580] frame P:2     Avg QP:18.50  size:   164
+[libx264 @ 000002048d450580] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000002048d450580] mb P  I16..4: 47.5%  0.0%  0.0%  P16..4:  6.9%  0.0%  0.0%  0.0%  0.0%    skip:45.6%
+[libx264 @ 000002048d450580] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 0.2% 3.6% 0.0%
+[libx264 @ 000002048d450580] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000002048d450580] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000002048d450580] kb/s:1.40
+[aac @ 000002048d491c80] Qavg: 65285.012
+https://www.youtube.com/watch?v=9zva5CvS5_8
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000002b94c0b7780] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:07.00, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000002b94c0f37c0] using SAR=2766/2771
+[libx264 @ 000002b94c0f37c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002b94c0f37c0] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000002b94c0f37c0] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000002b94c0bd640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000002b94c0b7940] video:1KiB audio:134KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.044886%
+frame=    6 fps=0.0 q=-1.0 Lsize=     138KiB time=00:00:06.00 bitrate= 188.3kbits/s speed=19.6x    
+[libx264 @ 000002b94c0f37c0] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000002b94c0f37c0] frame P:5     Avg QP:18.20  size:    72
+[libx264 @ 000002b94c0f37c0] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000002b94c0f37c0] mb P  I16..4: 19.0%  0.0%  0.0%  P16..4:  2.8%  0.0%  0.0%  0.0%  0.0%    skip:78.2%
+[libx264 @ 000002b94c0f37c0] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 0.1% 0.9% 0.0%
+[libx264 @ 000002b94c0f37c0] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000002b94c0f37c0] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000002b94c0f37c0] kb/s:0.75
+[aac @ 000002b94c156740] Qavg: 64597.734
+https://www.youtube.com/watch?v=LogVAlGleik
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 0000026821b87780] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:23.04, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0000026821bc37c0] using SAR=2766/2771
+[libx264 @ 0000026821bc37c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000026821bc37c0] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 0000026821bc37c0] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+frame=   30 fps=0.0 q=17.0 size=     256KiB time=00:00:14.31 bitrate= 146.5kbits/s speed=  28x    [mp4 @ 0000026821b8d640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000026821b87940] video:2KiB audio:492KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.232799%
+frame=   37 fps=0.0 q=-1.0 Lsize=     500KiB time=00:00:23.04 bitrate= 177.6kbits/s speed=29.7x    
+[libx264 @ 0000026821bc37c0] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 0000026821bc37c0] frame P:36    Avg QP:17.22  size:    22
+[libx264 @ 0000026821bc37c0] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0000026821bc37c0] mb P  I16..4:  2.8%  0.0%  0.0%  P16..4:  0.7%  0.0%  0.0%  0.0%  0.0%    skip:96.5%
+[libx264 @ 0000026821bc37c0] coded y,uvDC,uvAC intra: 0.0% 0.4% 0.0% inter: 0.0% 0.4% 0.0%
+[libx264 @ 0000026821bc37c0] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 0000026821bc37c0] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 0000026821bc37c0] kb/s:0.22
+[aac @ 0000026821c28a40] Qavg: 56648.266
+https://www.youtube.com/watch?v=depTOUB4Dyg
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000001c6e89877c0] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:53.59, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000001c6e89c3840] using SAR=2766/2771
+[libx264 @ 000001c6e89c3840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001c6e89c3840] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000001c6e89c3840] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+frame=   30 fps=0.0 q=17.0 size=     256KiB time=00:00:15.65 bitrate= 134.0kbits/s speed=29.9x    frame=   50 fps= 48 q=17.0 size=     768KiB time=00:00:39.16 bitrate= 160.6kbits/s speed=37.5x    [mp4 @ 000001c6e898d640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001c6e8987980] video:2KiB audio:1129KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.080550%
+frame=   77 fps= 53 q=-1.0 Lsize=    1143KiB time=00:00:53.58 bitrate= 174.8kbits/s speed=  37x    
+[libx264 @ 000001c6e89c3840] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000001c6e89c3840] frame P:76    Avg QP:17.11  size:    18
+[libx264 @ 000001c6e89c3840] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000001c6e89c3840] mb P  I16..4:  1.3%  0.0%  0.0%  P16..4:  0.6%  0.0%  0.0%  0.0%  0.0%    skip:98.1%
+[libx264 @ 000001c6e89c3840] coded y,uvDC,uvAC intra: 0.0% 0.4% 0.0% inter: 0.0% 0.4% 0.0%
+[libx264 @ 000001c6e89c3840] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000001c6e89c3840] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000001c6e89c3840] kb/s:0.16
+[aac @ 000001c6e8a27c00] Qavg: 58845.930
+https://www.youtube.com/watch?v=LWyFVN51fac
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000002db45b877c0] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:53.59, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000002db45bc3840] using SAR=2766/2771
+[libx264 @ 000002db45bc3840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002db45bc3840] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000002db45bc3840] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+frame=   32 fps=0.0 q=17.0 size=     256KiB time=00:00:17.00 bitrate= 123.4kbits/s speed=32.9x    frame=   52 fps= 50 q=17.0 size=     768KiB time=00:00:40.85 bitrate= 154.0kbits/s speed=39.2x    [mp4 @ 000002db45b8d640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000002db45b87980] video:2KiB audio:1129KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.077494%
+frame=   73 fps= 54 q=-1.0 Lsize=    1143KiB time=00:00:53.58 bitrate= 174.7kbits/s speed=39.8x    
+[libx264 @ 000002db45bc3840] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000002db45bc3840] frame P:72    Avg QP:17.11  size:    18
+[libx264 @ 000002db45bc3840] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000002db45bc3840] mb P  I16..4:  1.4%  0.0%  0.0%  P16..4:  0.6%  0.0%  0.0%  0.0%  0.0%    skip:98.1%
+[libx264 @ 000002db45bc3840] coded y,uvDC,uvAC intra: 0.0% 0.4% 0.0% inter: 0.0% 0.4% 0.0%
+[libx264 @ 000002db45bc3840] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000002db45bc3840] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000002db45bc3840] kb/s:0.17
+[aac @ 000002db45c27780] Qavg: 58845.930
+https://www.youtube.com/watch?v=Oiza7Oy3jMs
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 00000299741377c0] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:53.59, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0000029974173840] using SAR=2766/2771
+[libx264 @ 0000029974173840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000029974173840] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 0000029974173840] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+frame=   32 fps=0.0 q=17.0 size=     256KiB time=00:00:17.38 bitrate= 120.6kbits/s speed=33.5x    frame=   52 fps= 50 q=17.0 size=     768KiB time=00:00:41.23 bitrate= 152.6kbits/s speed=39.5x    [mp4 @ 000002997413d640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000029974137980] video:2KiB audio:1129KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.074437%
+frame=   69 fps= 51 q=-1.0 Lsize=    1143KiB time=00:00:53.58 bitrate= 174.7kbits/s speed=  40x    
+[libx264 @ 0000029974173840] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 0000029974173840] frame P:68    Avg QP:17.12  size:    18
+[libx264 @ 0000029974173840] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0000029974173840] mb P  I16..4:  1.5%  0.0%  0.0%  P16..4:  0.6%  0.0%  0.0%  0.0%  0.0%    skip:98.0%
+[libx264 @ 0000029974173840] coded y,uvDC,uvAC intra: 0.0% 0.4% 0.0% inter: 0.0% 0.4% 0.0%
+[libx264 @ 0000029974173840] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 0000029974173840] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 0000029974173840] kb/s:0.17
+[aac @ 00000299741d8440] Qavg: 58845.930
+https://www.youtube.com/watch?v=6yuIzHYcAdg
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\thesis\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000002f0beb277c0] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\thesis\data\user_files\audio\recording.wav':
+  Duration: 00:00:01.96, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000002f0beb70540] using SAR=2766/2771
+[libx264 @ 000002f0beb70540] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002f0beb70540] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000002f0beb70540] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\thesis\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000002f0beb2d640] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000002f0beb27a40] video:1KiB audio:33KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 5.102623%
+frame=    1 fps=0.0 q=37.0 Lsize=      36KiB time=00:00:01.00 bitrate= 295.0kbits/s speed=7.71x    
+[libx264 @ 000002f0beb70540] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000002f0beb70540] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000002f0beb70540] coded y,uvDC,uvAC intra: 0.0% 0.0% 0.0%
+[libx264 @ 000002f0beb70540] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000002f0beb70540] i8c dc,h,v,p: 100%  0%  0%  0%
+[libx264 @ 000002f0beb70540] kb/s:1.59
+[aac @ 000002f0bebcd780] Qavg: 65318.484
+https://www.youtube.com/watch?v=pjF37Xry05g
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000001f436d2df40] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:01.79, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000001f436d53700] using SAR=2766/2771
+[libx264 @ 000001f436d53700] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001f436d53700] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000001f436d53700] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000001f436d2ea40] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001f436d1c240] video:1KiB audio:32KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 5.265680%
+frame=    1 fps=0.0 q=37.0 Lsize=      34KiB time=00:00:01.00 bitrate= 281.2kbits/s speed=7.72x    
+[libx264 @ 000001f436d53700] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000001f436d53700] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000001f436d53700] coded y,uvDC,uvAC intra: 0.0% 0.0% 0.0%
+[libx264 @ 000001f436d53700] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000001f436d53700] i8c dc,h,v,p: 100%  0%  0%  0%
+[libx264 @ 000001f436d53700] kb/s:1.59
+[aac @ 000001f436d830c0] Qavg: 65410.648
+https://www.youtube.com/watch?v=Pzxnw5QE6CY

@@ -1,0 +1,17 @@
+# virtual environment
+myenv/
+
+# python cache files
+__pycache__/
+*.pyc
+
+*.pyo
+*.pyd
+*.wav
+
+tests/
+
+*.json
+*.txt
+*.wav
+*.mp4

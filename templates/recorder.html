@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Recorder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"></span>
+            <span class="sidebar-title">UniTutor</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('home') }}" class="nav-item">Home</a>
+            <a href="{{ url_for('courses') }}" class="nav-item">Courses</a>
+            <a href="{{ url_for('recorder') }}" class="nav-item active">Audio Recorder</a>
+            <a href="#" class="nav-item">My PDFs</a>
+            <a href="#" class="nav-item">Settings</a>
+            <a href="{{ url_for('login') }}" class="nav-item">Login</a>
+        </nav>
+    </aside>
+
+    <div class="main">
+        <div class="topbar">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <h1>Audio Recorder</h1>
+        </div>
+
+        <div class="app-wrapper">
+            <div class="recorder-container">
+                <p class="recorder-intro">
+                    Record audio using your microphone, listen to the preview, and save it directly to your project.
+                </p>
+
+                <div class="visualizer-box">
+                    <canvas id="waveformCanvas" width="600" height="140"></canvas>
+                </div>
+
+                <div class="controls-row">
+                    <button id="recordBtn" class="btn btn-record" onclick="toggleRecording()">● Start Recording</button>
+                    <button id="saveBtn" class="btn btn-save" onclick="saveAudio()" disabled>Save Recording</button>
+                </div>
+
+                <audio id="audioPlayback" class="audio-playback" controls></audio>
+
+                <div id="statusMessage" class="status-msg"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+<script src="{{ url_for('static', filename='js/recorder.js') }}"></script>
+</body>
+</html>
