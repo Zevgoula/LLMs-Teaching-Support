@@ -442,3 +442,630 @@ frame=    1 fps=0.0 q=37.0 Lsize=      34KiB time=00:00:01.00 bitrate= 281.2kbit
 [libx264 @ 000001f436d53700] kb/s:1.59
 [aac @ 000001f436d830c0] Qavg: 65410.648
 https://www.youtube.com/watch?v=Pzxnw5QE6CY
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000002745c0a4f80] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:06.83, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000002745c08c100] using SAR=2766/2771
+[libx264 @ 000002745c08c100] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002745c08c100] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000002745c08c100] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000002745c0b0980] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000002745c0c9480] video:1KiB audio:128KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.120597%
+frame=    6 fps=0.0 q=-1.0 Lsize=     132KiB time=00:00:06.00 bitrate= 179.7kbits/s speed=17.3x    
+[libx264 @ 000002745c08c100] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000002745c08c100] frame P:5     Avg QP:18.20  size:    72
+[libx264 @ 000002745c08c100] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000002745c08c100] mb P  I16..4: 19.0%  0.0%  0.0%  P16..4:  2.8%  0.0%  0.0%  0.0%  0.0%    skip:78.2%
+[libx264 @ 000002745c08c100] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 0.1% 0.9% 0.0%
+[libx264 @ 000002745c08c100] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000002745c08c100] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000002745c08c100] kb/s:0.75
+[aac @ 000002745c0f4c40] Qavg: 65325.340
+https://www.youtube.com/watch?v=tPxzDBOUoAA
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 0000022b8f924f80] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:06.83, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0000022b8f90c100] using SAR=2766/2771
+[libx264 @ 0000022b8f90c100] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000022b8f90c100] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 0000022b8f90c100] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 0000022b8f930980] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000022b8f949480] video:1KiB audio:128KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.120597%
+frame=    6 fps=0.0 q=-1.0 Lsize=     132KiB time=00:00:06.00 bitrate= 179.7kbits/s speed=16.4x    
+[libx264 @ 0000022b8f90c100] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 0000022b8f90c100] frame P:5     Avg QP:18.20  size:    72
+[libx264 @ 0000022b8f90c100] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0000022b8f90c100] mb P  I16..4: 19.0%  0.0%  0.0%  P16..4:  2.8%  0.0%  0.0%  0.0%  0.0%    skip:78.2%
+[libx264 @ 0000022b8f90c100] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 0.1% 0.9% 0.0%
+[libx264 @ 0000022b8f90c100] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 0000022b8f90c100] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 0000022b8f90c100] kb/s:0.75
+[aac @ 0000022b8f971bc0] Qavg: 65325.340
+https://www.youtube.com/watch?v=a0d04qcTUAA
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 0000025249994f80] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:02.13, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 00000252499b8680] using SAR=2766/2771
+[libx264 @ 00000252499b8680] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 00000252499b8680] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 00000252499b8680] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 0000025249977100] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 00000252499a0bc0] video:1KiB audio:39KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 4.593353%
+frame=    2 fps=0.0 q=-1.0 Lsize=      42KiB time=00:00:02.00 bitrate= 170.3kbits/s speed=13.5x    
+[libx264 @ 00000252499b8680] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 00000252499b8680] frame P:1     Avg QP:19.00  size:   301
+[libx264 @ 00000252499b8680] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 00000252499b8680] mb P  I16..4: 95.0%  0.0%  0.0%  P16..4:  5.0%  0.0%  0.0%  0.0%  0.0%    skip: 0.0%
+[libx264 @ 00000252499b8680] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 4.2% 75.0% 0.0%
+[libx264 @ 00000252499b8680] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 00000252499b8680] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 00000252499b8680] kb/s:2.00
+[aac @ 00000252499eaec0] Qavg: 65432.375
+Traceback (most recent call last):
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 100, in <module>
+    main()
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 94, in main
+    video_id = upload_video(get_youtube(), video, args.title, args.description, args.privacy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 70, in upload_video
+    status, response = request.next_chunk()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\http.py", line 1084, in next_chunk
+    resp, content = http.request(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\google_auth_httplib2.py", line 218, in request
+    response, content = self.http.request(
+                        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\httplib2\__init__.py", line 1724, in request
+    (response, content) = self._request(
+                          ^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\httplib2\__init__.py", line 1444, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\httplib2\__init__.py", line 1396, in _conn_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1430, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+ibx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000001fbbf597100] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001fbbf5c0bc0] video:1KiB audio:39KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 4.593353%
+frame=    2 fps=0.0 q=-1.0 Lsize=      42KiB time=00:00:02.00 bitrate= 170.3kbits/s speed=15.1x    
+[libx264 @ 000001fbbf5d8680] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000001fbbf5d8680] frame P:1     Avg QP:19.00  size:   301
+[libx264 @ 000001fbbf5d8680] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000001fbbf5d8680] mb P  I16..4: 95.0%  0.0%  0.0%  P16..4:  5.0%  0.0%  0.0%  0.0%  0.0%    skip: 0.0%
+[libx264 @ 000001fbbf5d8680] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 4.2% 75.0% 0.0%
+[libx264 @ 000001fbbf5d8680] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000001fbbf5d8680] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000001fbbf5d8680] kb/s:2.00
+[aac @ 000001fbbf6095c0] Qavg: 65432.375
+https://www.youtube.com/watch?v=9N1qtUmo_JI
+dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[in#1 @ 000001fcc40e5e40] Error opening input: Invalid data found when processing input
+Error opening input file C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav.
+Error opening input files: Invalid data found when processing input
+Traceback (most recent call last):
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 100, in <module>
+    main()
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 93, in main
+    video = convert_wav_to_mp4(args.audio, args.image, USER_FILES_DIR / "video")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 39, in convert_wav_to_mp4
+    subprocess.run(cmd, check=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\nekta\\Desktop\\code\\LLMs-for-Teaching-Support\\myenv\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '-y', '-loop', '1', '-framerate', '1', '-i', 'C:\\Users\\nekta\\Desktop\\code\\LLMs-for-Teaching-Support\\cover.png', '-i', 'C:\\Users\\nekta\\Desktop\\code\\LLMs-for-Teaching-Support\\data\\user_files\\audio\\recording.wav', '-c:v', 'libx264', '-preset', 'ultrafast', '-tune', 'stillimage', '-crf', '40', '-pix_fmt', 'yuv420p', '-vf', 'scale=320:180:force_original_aspect_ratio=decrease,pad=320:180:(ow-iw)/2:(oh-ih)/2', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', 'C:\\Users\\nekta\\Desktop\\code\\LLMs-for-Teaching-Support\\data\\user_files\\video\\recording.mp4']' returned non-zero exit status 3199971767.
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000001d982a14f80] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:02.13, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000001d982a38680] using SAR=2766/2771
+[libx264 @ 000001d982a38680] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001d982a38680] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000001d982a38680] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000001d9829f7100] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001d982a20bc0] video:1KiB audio:39KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 4.593353%
+frame=    2 fps=0.0 q=-1.0 Lsize=      42KiB time=00:00:02.00 bitrate= 170.3kbits/s speed=15.1x    
+[libx264 @ 000001d982a38680] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000001d982a38680] frame P:1     Avg QP:19.00  size:   301
+[libx264 @ 000001d982a38680] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000001d982a38680] mb P  I16..4: 95.0%  0.0%  0.0%  P16..4:  5.0%  0.0%  0.0%  0.0%  0.0%    skip: 0.0%
+[libx264 @ 000001d982a38680] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 4.2% 75.0% 0.0%
+[libx264 @ 000001d982a38680] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000001d982a38680] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000001d982a38680] kb/s:2.00
+[aac @ 000001d982a69a00] Qavg: 65432.375
+https://www.youtube.com/watch?v=-HJrLfvE-3s
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000001c967a6df40] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:14.59, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000001c967a943c0] using SAR=2766/2771
+[libx264 @ 000001c967a943c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001c967a943c0] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000001c967a943c0] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+frame=    4 fps=0.0 q=17.0 size=       0KiB time=00:00:04.00 bitrate=   0.1kbits/s speed=7.77x    [mp4 @ 000001c967a5d900] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001c967a5c140] video:2KiB audio:268KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.651679%
+frame=   37 fps=0.0 q=-1.0 Lsize=     274KiB time=00:00:14.59 bitrate= 154.1kbits/s speed=18.1x    
+[libx264 @ 000001c967a943c0] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000001c967a943c0] frame P:36    Avg QP:17.22  size:    22
+[libx264 @ 000001c967a943c0] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000001c967a943c0] mb P  I16..4:  2.8%  0.0%  0.0%  P16..4:  0.7%  0.0%  0.0%  0.0%  0.0%    skip:96.5%
+[libx264 @ 000001c967a943c0] coded y,uvDC,uvAC intra: 0.0% 0.4% 0.0% inter: 0.0% 0.4% 0.0%
+[libx264 @ 000001c967a943c0] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000001c967a943c0] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000001c967a943c0] kb/s:0.22
+[aac @ 000001c967ac66c0] Qavg: 65515.082
+Traceback (most recent call last):
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 100, in <module>
+    main()
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 94, in main
+    video_id = upload_video(get_youtube(), video, args.title, args.description, args.privacy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 70, in upload_video
+    status, response = request.next_chunk()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\http.py", line 1022, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000001c1eef6ec00] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:03.24, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000001c1eef93940] using SAR=2766/2771
+[libx264 @ 000001c1eef93940] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001c1eef93940] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000001c1eef93940] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000001c1eef5c140] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001c1eef6e040] video:1KiB audio:56KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 3.597742%
+frame=    3 fps=0.0 q=-1.0 Lsize=      59KiB time=00:00:03.00 bitrate= 160.5kbits/s speed=12.6x    
+[libx264 @ 000001c1eef93940] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000001c1eef93940] frame P:2     Avg QP:18.50  size:   164
+[libx264 @ 000001c1eef93940] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000001c1eef93940] mb P  I16..4: 47.5%  0.0%  0.0%  P16..4:  6.9%  0.0%  0.0%  0.0%  0.0%    skip:45.6%
+[libx264 @ 000001c1eef93940] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 0.2% 3.6% 0.0%
+[libx264 @ 000001c1eef93940] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000001c1eef93940] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000001c1eef93940] kb/s:1.40
+[aac @ 000001c1eefc5800] Qavg: 65089.148
+wav -> mp4 conversion complete: C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4
+Loaded credentials from token.json
+Refreshed credentials
+Traceback (most recent call last):
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 107, in <module>
+    main()
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 101, in main
+    video_id = upload_video(get_youtube(), video, args.title, args.description, args.privacy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 75, in upload_video
+    status, response = request.next_chunk()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\http.py", line 1022, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 000001642f43df40] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:05.46, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000001642f4643c0] using SAR=2766/2771
+[libx264 @ 000001642f4643c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001642f4643c0] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 000001642f4643c0] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 000001642f42d900] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001642f42c140] video:1KiB audio:105KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.320909%
+frame=    5 fps=0.0 q=-1.0 Lsize=     109KiB time=00:00:05.00 bitrate= 178.5kbits/s speed=18.1x    
+[libx264 @ 000001642f4643c0] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 000001642f4643c0] frame P:4     Avg QP:18.25  size:    87
+[libx264 @ 000001642f4643c0] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 000001642f4643c0] mb P  I16..4: 23.8%  0.0%  0.0%  P16..4:  3.4%  0.0%  0.0%  0.0%  0.0%    skip:72.8%
+[libx264 @ 000001642f4643c0] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 0.1% 1.2% 0.0%
+[libx264 @ 000001642f4643c0] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 000001642f4643c0] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 000001642f4643c0] kb/s:0.88
+[aac @ 000001642f4967c0] Qavg: 61529.125
+wav -> mp4 conversion complete: C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4
+Loaded credentials from token.json
+Refreshed credentials
+Traceback (most recent call last):
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 107, in <module>
+    main()
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 101, in main
+    video_id = upload_video(get_youtube(), video, args.title, args.description, args.privacy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 75, in upload_video
+    status, response = request.next_chunk()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\http.py", line 1022, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 0000019f7484df40] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:01.79, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0000019f74873700] using SAR=2766/2771
+[libx264 @ 0000019f74873700] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0000019f74873700] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 0000019f74873700] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 0000019f7484ea40] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000019f7483c240] video:1KiB audio:31KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 5.459627%
+frame=    1 fps=0.0 q=37.0 Lsize=      33KiB time=00:00:01.00 bitrate= 271.7kbits/s speed=5.89x    
+[libx264 @ 0000019f74873700] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 0000019f74873700] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0000019f74873700] coded y,uvDC,uvAC intra: 0.0% 0.0% 0.0%
+[libx264 @ 0000019f74873700] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 0000019f74873700] i8c dc,h,v,p: 100%  0%  0%  0%
+[libx264 @ 0000019f74873700] kb/s:1.59
+[aac @ 0000019f748ab5c0] Qavg: 65274.625
+eisai mesa sti main
+wav -> mp4 conversion complete: C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4
+eisai mesa sto get_youtube
+Loaded credentials from token.json
+Refreshed credentials
+eisai mesa sto upload_video
+Traceback (most recent call last):
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 110, in <module>
+    main()
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 104, in main
+    video_id = upload_video(get_youtube(), video, args.title, args.description, args.privacy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 77, in upload_video
+    status, response = request.next_chunk()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\http.py", line 1022, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, png_pipe, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\cover.png':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 1862x956 [SAR 3779:3779 DAR 931:478], 1 fps, 1 tbr, 1 tbn
+[aist#1:0/pcm_s16le @ 00000250d98bdf40] Guessed Channel Layout: mono
+Input #1, wav, from 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\audio\recording.wav':
+  Duration: 00:00:05.29, bitrate: 768 kb/s
+  Stream #1:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+  Stream #1:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 00000250d98e43c0] using SAR=2766/2771
+[libx264 @ 00000250d98e43c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 00000250d98e43c0] profile Constrained Baseline, level 1.1, 4:2:0, 8-bit
+[libx264 @ 00000250d98e43c0] 264 - core 164 r3192 c24e06c - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:-3:-3 analyse=0:0 me=dia subme=0 psy=1 psy_rd=2.00:0.70 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=1 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+Output #0, mp4, to 'C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 320x180 [SAR 38171:38240 DAR 38171:21510], q=2-31, 1 fps, 16384 tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s
+      Metadata:
+        encoder         : Lavc61.19.100 aac
+[mp4 @ 00000250d98ad900] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 00000250d98ac140] video:1KiB audio:94KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.577623%
+frame=    5 fps=0.0 q=-1.0 Lsize=      97KiB time=00:00:05.00 bitrate= 159.1kbits/s speed=15.2x    
+[libx264 @ 00000250d98e43c0] frame I:1     Avg QP:37.00  size:   199
+[libx264 @ 00000250d98e43c0] frame P:4     Avg QP:18.25  size:    87
+[libx264 @ 00000250d98e43c0] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 00000250d98e43c0] mb P  I16..4: 23.8%  0.0%  0.0%  P16..4:  3.4%  0.0%  0.0%  0.0%  0.0%    skip:72.8%
+[libx264 @ 00000250d98e43c0] coded y,uvDC,uvAC intra: 0.0% 0.2% 0.0% inter: 0.1% 1.2% 0.0%
+[libx264 @ 00000250d98e43c0] i16 v,h,dc,p: 92%  0%  8%  0%
+[libx264 @ 00000250d98e43c0] i8c dc,h,v,p: 96%  4%  0%  0%
+[libx264 @ 00000250d98e43c0] kb/s:0.88
+[aac @ 00000250d991e480] Qavg: 65405.551
+eisai mesa sti main
+wav -> mp4 conversion complete: C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\data\user_files\video\recording.mp4
+eisai mesa sto get_youtube
+Loaded credentials from token.json
+Refreshed credentials
+eisai mesa sto upload_video
+Traceback (most recent call last):
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 110, in <module>
+    main()
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 104, in main
+    video_id = upload_video(get_youtube(), video, args.title, args.description, args.privacy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\scripts\docu_video_pipeline.py", line 77, in upload_video
+    status, response = request.next_chunk()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nekta\Desktop\code\LLMs-for-Teaching-Support\myenv\Lib\site-packages\googleapiclient\http.py", line 1022, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">

@@ -70,6 +70,10 @@ def courses():
 def recorder():
     return render_template("recorder.html")
 
+@app.route("/prof_recordings")
+def prof_recordings():
+    return render_template("prof_recordings.html", courses=config.RECORDINGS)
+
 
 # ── PDF loading ────────────────────────────────────────────────────
 

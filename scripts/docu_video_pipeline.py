@@ -12,6 +12,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+from datetime import datetime
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from config import USER_FILES_DIR
@@ -37,27 +38,33 @@ def convert_wav_to_mp4(audio_path, image_path, output_dir):
         str(output_path),
     ]
     subprocess.run(cmd, check=True)
+    print(f"wav -> mp4 conversion complete: {output_path}")
     return output_path
 
 
 def get_youtube():
+    print("eisai mesa sto get_youtube")
     """Log in (browser on first run, token.json afterwards)."""
     creds = None
     if Path("token.json").exists():
         creds = Credentials.from_authorized_user_file("token.json", SCOPES)
+        print("Loaded credentials from token.json")
     if creds and creds.expired and creds.refresh_token:
         try:
             creds.refresh(Request())
+            print("Refreshed credentials")
         except RefreshError:
             creds = None
     if not creds or not creds.valid:
         flow = InstalledAppFlow.from_client_secrets_file("client.json", SCOPES)
         creds = flow.run_local_server(port=0)
         Path("token.json").write_text(creds.to_json(), encoding="utf-8")
+        print("Saved new credentials to token.json")
     return build("youtube", "v3", credentials=creds)
 
 
 def upload_video(youtube, video_path, title, description, privacy="unlisted"):
+    print("eisai mesa sto upload_video")
     body = {
         "snippet": {"title": title, "description": description, "categoryId": "22"},
         "status": {"privacyStatus": privacy},
@@ -74,13 +81,16 @@ def upload_video(youtube, video_path, title, description, privacy="unlisted"):
 
 
 def main():
+    print("eisai mesa sti main")
     p = argparse.ArgumentParser(description="Turn a WAV recording into a YouTube video.")
     p.add_argument("audio", type=Path, nargs="?",
-                   default=USER_FILES_DIR / "audio" / "tester.wav",
+                   default=USER_FILES_DIR / "audio" / "recording.wav",
                    help="Path to a .wav file (default: %(default)s)")
     p.add_argument("--image", type=Path,
                    default=Path(__file__).resolve().parent.parent / "cover.png")
-    p.add_argument("--title", default="Test upload")
+
+    title = f"Recording {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    p.add_argument("--title", default=title)
     p.add_argument("--description", default="Test description")
     p.add_argument("--privacy", choices=["public", "unlisted", "private"], default="unlisted")
     args = p.parse_args()

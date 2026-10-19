@@ -86,7 +86,16 @@ COURSES = {
             {
                 "title": "Digital Logic Notes",
                 "file": "digital_logic/Digital_logic.pdf",
-            }
+
+            },
+            {
+                "title": "Digital Logic Notes 2",
+                "file": "digital_logic/Digital_logic_2.pdf",
+            },
+            {
+                "title": "Digital Logic Notes 3",
+                "file": "digital_logic/Digital_logic_3.pdf",
+            },
         ],
     },
     "telecommunications": {
@@ -99,11 +108,53 @@ COURSES = {
                     "telecommunications/Ενότητα 2η_Συστηματα Επικοινωνιών_"
                     "Αναλογικές Διαμορφώσεις Πλάτους_Μέρος Α_2025.pdf"
                 ),
+            },
+            {
+                "title": "Συστήματα Επικοινωνιών – Ψηφιακές Διαμορφώσεις Πλάτους",
+                "file": (
+                    "telecommunications/Ενότητα 2η_Συστηματα Επικοινωνιών_"
+                    "Αναλογικές Διαμορφώσεις Πλάτους_Μέρος Α_2025.pdf"
+                ),
             }
         ],
     },
 }
 
+
+# ── Course catalogue ───────────────────────────────────────────────
+#: ``file`` values are relative to :data:`COURSE_MATERIAL_DIR`.
+# this is to be changed when db is used
+RECORDINGS = {
+    "Python": {
+        "name": "Python Programming",
+        "description": "Introduction to Python programming.",
+        "pdfs": [
+            {
+                "title": "Python Lecture 1",
+                "file": "python/Python_Basics.pdf",
+            },
+            {
+                "title": "Python Lecture 2",
+                "file": "python/Python_Intermediate.pdf",
+            }
+        ],
+    },
+
+        "Java": {
+                "name": "Java Programming",
+                "description": "Introduction to Java programming.",
+                "pdfs": [
+                    {
+                        "title": "Java Lecture 1",
+                        "file": "java/Java_Basics.pdf",
+                    },
+                    {
+                        "title": "Java Lecture 2",
+                        "file": "java/Java_Intermediate.pdf",
+                    }
+                ],
+            }
+}
 
 def resolve_course_pdf(relative_path: str) -> Path:
     """Resolve a course PDF path and make sure it stays inside the material dir.
