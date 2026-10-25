@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo"></span>
+                <span class="sidebar-title">UniTutor</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="{{ url_for('home') }}" class="nav-item">Home</a>
+                <a href="{{ url_for('courses') }}" class="nav-item">Courses</a>
+                <a href="{{ url_for('recorder') }}" class="nav-item">Audio Recorder</a>
+                <a href="{{ url_for('prof_recordings') }}" class="nav-item">My Recordings</a>
+                <a href="{{ url_for('quiz')}}" class="nav-item active">Quiz</a>
+                <a href="#" class="nav-item">Settings</a>
+                <a href="{{ url_for('login') }}" class="nav-item">Login</a>
+            </nav>
+        </aside>
+
+        <div class="main">
+            <div class="topbar">
+                <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+                <h1>Lecture Quiz</h1>
+            </div>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2>Αυτή θα είναι η εκφώνηση της ερώτησης</h2>
+                </div>
+                <div class="quiz-answer-container">
+                    <div class="quiz-answer-box">Απάντηση 1</div>
+                    <div class="quiz-answer-box">Απάντηση 2</div>
+                    <div class="quiz-answer-box">Απάντηση 3</div>
+                    <div class="quiz-answer-box">Απάντηση 4</div>
+                </div>
+
+            </div>
+            <div class="quiz-bttn-container">
+                <div class="toggle-btn-quiz">skip</div>
+                <div class="toggle-btn-quiz">end quiz</div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+</body>
+
+</html>

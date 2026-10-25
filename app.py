@@ -74,6 +74,9 @@ def recorder():
 def prof_recordings():
     return render_template("prof_recordings.html", courses=config.RECORDINGS)
 
+@app.route("/Quiz")
+def quiz():
+    return render_template("quiz.html")
 
 # ── PDF loading ────────────────────────────────────────────────────
 
