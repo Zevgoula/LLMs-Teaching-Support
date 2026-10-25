@@ -58,6 +58,13 @@ def create_tutor_session(file_path: Path):
     chat_session.send_message([uploaded, SESSION_GREETING])
     return chat_session
 
+def generate_text(prompt: str) -> str:
+    """One-shot text generation (no chat session, no document upload)."""
+    response = get_client().models.generate_content(
+        model=MODEL_NAME,
+        contents=prompt,
+    )
+    return response.text
 
 def ask(chat_session, message: str) -> str:
     """Send ``message`` to an existing session and return the reply text."""

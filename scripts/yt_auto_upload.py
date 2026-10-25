@@ -57,7 +57,7 @@ def upload_video(youtube):
     }
 
     # put the path of the video that you want to upload
-    media_file = USER_FILES_DIR / "video" / "avouris.mp4"
+    media_file = USER_FILES_DIR / "video" / "recording.mp4"
 
     request = youtube.videos().insert(
         part="snippet,status",
