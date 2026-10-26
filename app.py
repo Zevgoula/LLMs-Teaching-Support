@@ -10,7 +10,8 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
-
+import json
+import quiz as quiz_gen
 from flask import Flask, jsonify, render_template, request
 
 import config
@@ -74,9 +75,29 @@ def recorder():
 def prof_recordings():
     return render_template("prof_recordings.html", courses=config.RECORDINGS)
 
-@app.route("/Quiz")
+@app.route("/quiz")
 def quiz():
     return render_template("quiz.html")
+
+
+QUIZ_PATH = Path(config.BASE_DIR) / "quiz.json"
+
+@app.route("/quiz_data")
+def quiz_data():
+    """Return the last generated quiz."""
+    if not QUIZ_PATH.is_file():
+        return jsonify({"error": "No quiz generated yet."}), 404
+    return jsonify(json.loads(QUIZ_PATH.read_text(encoding="utf-8")))
+
+@app.route("/generate_quiz", methods=["POST"])
+def generate_quiz_route():
+    try:
+        transcript = quiz_gen.load_transcript(quiz_gen.TRANSCRIPT_PATH)
+        quests = quiz_gen.generate_quiz(transcript)
+        QUIZ_PATH.write_text(json.dumps(quests, indent=2, ensure_ascii=False), encoding="utf-8")
+        return jsonify(quests)
+    except Exception as exc:  
+        return jsonify({"error": str(exc)}), 500
 
 # ── PDF loading ────────────────────────────────────────────────────
 

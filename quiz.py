@@ -12,14 +12,24 @@ OUTPUT_PATH = Path("quiz.json")
 NUM_QUESTIONS = 5
 
 QUIZ_PROMPT = """You are a university tutor. Based ONLY on the lecture transcript below,
-write {n} multiple-choice questions that test understanding of the key concepts.
-Make sure to not address "Τον ομιλητή" in the quiestions/
+write {n} multiple-choice questions in Greek that test understanding of the key concepts.
+
+Rules:
+- Each question tests exactly one idea and is phrased as a standalone question
+  about the concept. Never mention "the speaker", "the lecture", "the transcript",
+  or phrases like "σύμφωνα με τη διάλεξη / τον ομιλητή" anywhere, including
+  in the explanations.
+- Exactly 4 options. They must be similar in length and detail; the correct
+  answer must not be longer or more specific than the others. Distractors must
+  be plausible and from the same topic.
+- "options" contains only the option text, with no letter prefixes.
+- "explanation" is 1-2 clean sentences in your own words, not quotes from the transcript.
 
 Respond with ONLY valid JSON (no markdown fences) in this exact shape:
 [
   {{
     "question": "...",
-    "options": ["A", "B", "C", "D"],
+    "options": ["...", "...", "...", "..."],
     "answer_index": 0,
     "explanation": "..."
   }}
@@ -31,6 +41,14 @@ Transcript:
 \"\"\"
 """
 
+import random
+
+def shuffle_options(quiz: list[dict]) -> list[dict]:
+    for q in quiz:
+        correct = q["options"][q["answer_index"]]
+        random.shuffle(q["options"])
+        q["answer_index"] = q["options"].index(correct)
+    return quiz
 
 def load_transcript(path: Path) -> str:
     if not path.is_file():
@@ -54,7 +72,7 @@ def generate_quiz(transcript: str, n: int = NUM_QUESTIONS) -> list[dict]:
     prompt = QUIZ_PROMPT.format(n=n, transcript=transcript)
     raw = llm.generate_text(prompt)
 
-    return parse_quiz(raw)
+    return shuffle_options(parse_quiz(raw))
 
 
 if __name__ == "__main__":

@@ -34,30 +34,41 @@
                 <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
                 <h1>Lecture Quiz</h1>
             </div>
-            <div class="quiz-container">
-                <div class="quiz-header">
-                    <h2>Αυτή θα είναι η εκφώνηση της ερώτησης</h2>
-                </div>
-                <div class="quiz-answer-container">
-                    <div class="quiz-answer-box">Απάντηση 1</div>
-                    <div class="quiz-answer-box">Απάντηση 2</div>
-                    <div class="quiz-answer-box">Απάντηση 3</div>
-                    <div class="quiz-answer-box">Απάντηση 4</div>
+            <div class="quiz-wrapper">
+                <!-- Question view -->
+                <div class="quiz-container" id="quiz-card">
+                    <div class="quiz-header">
+                        <small id="quiz-progress"></small>
+                        <div class="quiz-progress-bar">
+                            <div id="quiz-progress-fill"></div>
+                        </div>
+                        <h2 id="quiz-question">Loading…</h2>
+                    </div>
+                    <div class="quiz-answer-container" id="quiz-answers"></div>
+                    <p id="quiz-explanation" class="quiz-explanation" hidden></p>
                 </div>
 
+                <div class="quiz-bttn-container" id="quiz-controls">
+                    <button class="quiz-btn" id="quiz-prev">← Previous question</button>
+                    <button class="quiz-btn primary" id="quiz-next">Next question →</button>
+                    <button class="quiz-btn ghost" id="quiz-end">End quiz</button>
+                </div>
+
+                <!-- Result view -->
+                <div class="quiz-container quiz-result" id="quiz-result" hidden>
+                    <h2>Quiz complete</h2>
+                    <p class="quiz-score" id="quiz-score"></p>
+                    <p id="quiz-score-detail"></p>
+                    <button class="quiz-btn primary" id="quiz-retake">Retake quiz</button>
+                </div>
             </div>
-            <div class="quiz-bttn-container">
-                <div class="toggle-btn-quiz">skip</div>
-                <div class="toggle-btn-quiz">end quiz</div>
-            </div>
+
+
         </div>
-
-
-    </div>
     </div>
 
     <script src="{{ url_for('static', filename='js/common.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/quiz.js') }}?v=3"></script>
 </body>
 
 </html>
