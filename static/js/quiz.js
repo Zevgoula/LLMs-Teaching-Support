@@ -44,7 +44,6 @@ function startQuiz() {
 function render() {
   const q = quiz[current];
   const picked = answers[current];
-  const last = current === quiz.length - 1;
 
   $("quiz-progress").textContent = `Question ${current + 1} of ${quiz.length}`;
   $("quiz-progress-fill").style.width = `${((current + 1) / quiz.length) * 100}%`;
@@ -71,7 +70,7 @@ function render() {
   expl.hidden = picked === null || !q.explanation;
 
   $("quiz-prev").disabled = current === 0;
-  $("quiz-next").textContent = last ? "Finish quiz" : "Next question →";
+  $("quiz-next").disabled = current === quiz.length -1;
 }
 
 function choose(i) {
@@ -94,7 +93,7 @@ function finish() {
 
 $("quiz-prev").onclick = () => { if (current > 0) { current--; render(); } };
 $("quiz-next").onclick = () => {
-  if (current < quiz.length - 1) { current++; render(); } else finish();
+  if (current < quiz.length - 1) { current++; render(); }
 };
 $("quiz-end").onclick = finish;
 $("quiz-retake").onclick = startQuiz;

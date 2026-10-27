@@ -79,6 +79,10 @@ def prof_recordings():
 def quiz():
     return render_template("quiz.html")
 
+@app.route("/create_quiz")
+def create_quiz():
+    return render_template("create_quiz.html")
+
 
 QUIZ_PATH = Path(config.BASE_DIR) / "quiz.json"
 

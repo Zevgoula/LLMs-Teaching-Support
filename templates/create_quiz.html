@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI University Tutor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"></span>
+            <span class="sidebar-title">UniTutor</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('home') }}" class="nav-item">Home</a>
+            <a href="{{ url_for('courses') }}" class="nav-item">Courses</a>
+            <a href="{{ url_for('recorder') }}" class="nav-item"> Audio Recorder</a>
+            <a href="{{ url_for('prof_recordings') }}" class="nav-item">My Recordings</a>
+            <a href="{{ url_for('quiz')}}"class="nav-item">Quiz</a>
+            <a href="{{ url_for('create_quiz')}}"class="nav-item active">Create Quiz</a>
+            <a href="#" class="nav-item">Settings</a>
+            <a href="{{ url_for('login') }}" class="nav-item">Login</a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main">
+
+        <div class="topbar">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <h1>Generate and Customize Quiz</h1>
+        </div>
+        <div class="app-wrapper">
+            
+        </div>
+    </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script defer src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

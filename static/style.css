@@ -625,6 +625,7 @@ textarea#userInput::placeholder { color: #b0b5d0; }
   justify-content: space-AROUND;
   flex-wrap: wrap;
   margin-top: 1.25rem;
+  
 }
 
 .quiz-btn {
