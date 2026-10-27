@@ -50,6 +50,7 @@ function appendHtml(html, className) {
     div.className = 'msg ' + className;
     div.innerHTML = html;
     chatBox.appendChild(div);
+    return div;
 }
 
 async function sendMessage() {
@@ -79,7 +80,14 @@ async function sendMessage() {
         if (result.error) {
             appendMessage('⚠ ' + result.error, 'ai-msg error-msg');
         } else {
-            appendHtml(marked.parse(result.reply), 'ai-msg');
+            const replyElement = appendHtml(marked.parse(result.reply), 'ai-msg');
+            if (window.MathJax?.typesetPromise) {
+                try {
+                    await window.MathJax.typesetPromise([replyElement]);
+                } catch (error) {
+                    console.error('Unable to render mathematical notation:', error);
+                }
+            }
         }
     } catch (err) {
         document.getElementById(typingId)?.remove();
