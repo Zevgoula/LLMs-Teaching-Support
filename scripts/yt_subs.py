@@ -12,13 +12,13 @@ except FileNotFoundError:
 
 try:
     ytt = YouTubeTranscriptApi()
-    transcript = ytt.fetch(video_id, languages=["el", "en"])
+    transcript = ytt.fetch(video_id, languages=["en"])
     with open("yt_transcript.txt", "w", encoding="utf-8") as f:
         for entry in transcript:
             f.write(entry.text + "\n")
 except Exception as e:
-    print(f"Error fetching transcript: {e}")
+    print(f"Error fetching transcript: {e}") 
     exit(1)
 
 
-# there is no need for authentication since the videos are now "unlisted"
+# there is no need for authentication since the videos are now "unlisted"/"public"

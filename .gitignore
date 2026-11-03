@@ -9,10 +9,11 @@ __pycache__/
 *.pyd
 *.wav
 
-tests/
 
 *.json
 *.txt
 *.wav
 *.mp4
 *.pdf
+*.png
+/chroma_db
