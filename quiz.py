@@ -30,6 +30,7 @@ Rules:
 - Each question has exactly 4 options (A, B, C, D) with exactly one correct answer and plausible distractors.
 - "sources" lists the tags the question relies on, copied exactly from the source, e.g. "slide 19" or "lecture line 1179-1230".
 - Cite a small lecture line range that supports the question, ideally under 20 lines.
+- Every question MUST cite at least one lecture line range AND/OR a slide tag.
 - Do not put the answer letter inside the option text.
 
 Respond with ONLY valid JSON (no markdown fences) in this exact shape:

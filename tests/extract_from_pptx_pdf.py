@@ -59,53 +59,49 @@ def extract(pdf_path: Path, out_dir: Path, dpi: int = 150, min_image_px: int = 5
 
 
 def load_descriptions(out_dir: Path) -> dict:
-    """Return {slide_number: [description, ...]} from the Gemini output."""
+    """Return {slide_number: description} from slides_img.json (Gemini output)."""
     path = out_dir / DESC_FILE
     if not path.exists():
-        print(f"{DESC_FILE} not found in {out_dir.resolve()}")
+        print(f"{DESC_FILE} not found in {path.parent.resolve()}")
         return {}
 
-    data = json.loads(path.read_text(encoding="utf-8"))
+    data = json.loads(path.read_text(encoding="utf-8-sig"))
     desc_by_slide = {}
     for d in data:
-        num = d.get("slide_number")
-        if num is None:
-            m = re.search(r"(\d+)", str(d.get("img_number", "")))
-            num = int(m.group(1)) if m else None
-        if num is None:
-            print(f"Skipping entry with no slide number: {d.get('img_number')}")
+        m = re.search(r"(\d+)", str(d.get("img_number", "")))
+        if not m:
+            print(f"Skipping entry without slide number: {d.get('img_number')}")
             continue
-        desc_by_slide.setdefault(int(num), []).append(d.get("description", ""))
+        desc_by_slide.setdefault(int(m.group(1)), []).append(d.get("description", ""))
+    print(f"Loaded descriptions for slides: {sorted(desc_by_slide)}")
     return desc_by_slide
 
 
-
 def combine(out_dir: Path):
-    try:
-        slides = json.loads((out_dir / "slides_text.json").read_text(encoding="utf-8"))
-    except FileNotFoundError:
-        print(f"File not found: {out_dir / 'slides_text.json'}")
+    slides_path = out_dir / "slides_text.json"
+    if not slides_path.exists():
+        print(f"File not found: {slides_path}")
         return
+    slides = json.loads(slides_path.read_text(encoding="utf-8"))
     desc_by_slide = load_descriptions(out_dir)
 
     merged = []
     for s in slides:
+        num = s["slide_number"]
+        descs = desc_by_slide.get(num, []) if s["has_image"] else []
         merged.append({
-            "slide_number": s["slide_number"],
+            "slide_number": num,
             "source": s["source"],
             "slide_text": s["slide_text"],
             "has_image": s["has_image"],
             "page_render": s["page_render"],
-            "image_descriptions": desc_by_slide.get(s["slide_number"], []),
+            "image_descriptions": descs,
         })
 
-    try:
-        out = out_dir / "slides_merged.json"
-        out.write_text(json.dumps(merged, indent=2, ensure_ascii=False), encoding="utf-8")
-        n_desc = sum(bool(m["image_descriptions"]) for m in merged)
-        print(f"Merged {len(merged)} slides, {n_desc} with descriptions -> {out.resolve()}")
-    except Exception as e:
-        print(f"Error writing merged slides: {e}")
+    out = out_dir / "slides_merged.json"
+    out.write_text(json.dumps(merged, indent=2, ensure_ascii=False), encoding="utf-8")
+    n_desc = sum(bool(m["image_descriptions"]) for m in merged)
+    print(f"Merged {len(merged)} slides, {n_desc} with descriptions -> {out.resolve()}")
 
 def main():
     print("1) Extract  2) Combine")
