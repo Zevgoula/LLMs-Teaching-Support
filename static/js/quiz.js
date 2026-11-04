@@ -1,12 +1,14 @@
-let originalQuiz = [];   
-let quiz = [];           
-let answers = [];        
+let originalQuiz = [];
+let quiz = [];
+let answers = [];
 let current = 0;
+const IS_PROFESSOR = true; // no roles yet; change later
 
 const $ = id => document.getElementById(id);
 
+
 function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('collapsed');
+  document.getElementById('sidebar').classList.toggle('collapsed');
 }
 
 async function loadQuiz() {
@@ -22,17 +24,9 @@ async function loadQuiz() {
   startQuiz();
 }
 
-// Shuffle options while keeping answer_index pointing at the right one
-function shuffled(questions) {
-  return questions.map(q => {
-    const correct = q.options[q.answer_index];
-    const options = [...q.options].sort(() => Math.random() - 0.5);
-    return { ...q, options, answer_index: options.indexOf(correct) };
-  });
-}
-
 function startQuiz() {
-  quiz = shuffled(originalQuiz);
+  // Questions the material does not cover have no options, so skip them
+  quiz = originalQuiz.filter(q => q.found_in_source !== false && q.options?.length);
   answers = new Array(quiz.length).fill(null);
   current = 0;
   $("quiz-card").hidden = false;
@@ -70,8 +64,77 @@ function render() {
   expl.hidden = picked === null || !q.explanation;
 
   $("quiz-prev").disabled = current === 0;
-  $("quiz-next").disabled = current === quiz.length -1;
+  $("quiz-next").disabled = current === quiz.length - 1;
+
+  // Evidence last, so a problem here cannot stop the buttons from updating
+  try {
+    const evBox = $("quiz-evidence");
+    if (evBox && picked !== null) renderProfessorEvidence(q, evBox);
+    else if (evBox) evBox.hidden = true;
+  } catch (err) {
+    console.error("Evidence panel failed:", err);
+  }
 }
+
+function showTranscript(text, maxLines = 12) {
+  const lines = text.split("\n");
+  const pre = document.createElement("pre");
+  pre.className = "evidence-text";
+  pre.textContent = lines.slice(0, maxLines).join("\n");
+  if (lines.length <= maxLines) return pre;
+
+  const wrap = document.createElement("div");
+  const more = document.createElement("button");
+  more.type = "button";
+  more.textContent = `Show all ${lines.length} lines`;
+  more.onclick = () => {
+    pre.textContent = text;
+    more.remove();
+  };
+  wrap.append(pre, more);
+  return wrap;
+}
+
+function renderProfessorEvidence(q, container) {
+  if (!container) return;
+  container.innerHTML = "";
+  if (!IS_PROFESSOR || !q.evidence) {
+    container.hidden = true;
+    return;
+  }
+
+  const row = document.createElement("div");
+  row.className = "evidence-row";
+
+  // Slide images, served from slides_img_all/ via /lecture_files/
+  for (const img of q.slide_images || []) {
+    const fig = document.createElement("figure");
+    const pic = document.createElement("img");
+    pic.src = `/lecture_files/${img.path}`;
+    pic.alt = `Slide ${img.slide}`;
+    pic.className = "evidence-slide";
+    const cap = document.createElement("figcaption");
+    cap.textContent = `Slide ${img.slide}`;
+    fig.append(pic, cap);
+    row.appendChild(fig);
+  }
+
+  // Transcript the professor used for this question
+  const tr = document.createElement("div");
+  tr.className = "evidence-transcript";
+  const label = document.createElement("strong");
+  label.textContent = q.transcript_range ? `[${q.transcript_range}]` : "(no transcript cited)";
+  tr.appendChild(label);
+  if (q.transcript_range) {
+    tr.appendChild(showTranscript(q.evidence[q.transcript_range] || "(not found)"));
+  }
+  row.appendChild(tr);
+
+  container.appendChild(row);
+  container.hidden = false;
+}
+
+
 
 function choose(i) {
   if (answers[current] !== null) return;

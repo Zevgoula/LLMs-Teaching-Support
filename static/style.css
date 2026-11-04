@@ -678,3 +678,47 @@ textarea#userInput::placeholder { color: #b0b5d0; }
   .quiz-bttn-container .quiz-btn { flex: 1 1 100%; padding: 10px; }
   .quiz-result:not([hidden]) { padding: 3rem 1.5rem; }
 }
+
+#quiz-evidence {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  background: #fafafa;
+}
+.evidence-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.evidence-row figure { margin: 0; }
+.evidence-slide {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+.evidence-row figcaption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+}
+.evidence-transcript strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 6px;
+}
+.evidence-text {
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0 0 6px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+@media (max-width: 700px) {
+  .evidence-row { grid-template-columns: 1fr; }
+}

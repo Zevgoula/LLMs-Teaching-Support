@@ -13,10 +13,8 @@ from pathlib import Path
 import json
 import quiz as quiz_gen
 from flask import Flask, jsonify, render_template, request
-
 import config
 from services import llm
-
 from db import init_db
 
 app = Flask(__name__)
@@ -84,24 +82,37 @@ def create_quiz():
     return render_template("create_quiz.html")
 
 
-QUIZ_PATH = Path(config.BASE_DIR) / "quiz.json"
+from flask import send_from_directory
+
+BASE_DIR = Path(__file__).resolve().parent
+LECTURE_DIR = BASE_DIR / "tests" / "out" / "lecture_01"
+QUIZ_PATH = LECTURE_DIR / "quiz.json"
+
 
 @app.route("/quiz_data")
 def quiz_data():
-    """Return the last generated quiz."""
     if not QUIZ_PATH.is_file():
         return jsonify({"error": "No quiz generated yet."}), 404
-    return jsonify(json.loads(QUIZ_PATH.read_text(encoding="utf-8")))
+    return send_from_directory(LECTURE_DIR, "quiz.json")
+
 
 @app.route("/generate_quiz", methods=["POST"])
 def generate_quiz_route():
+    body = request.get_json(silent=True) or {}
     try:
-        transcript = quiz_gen.load_transcript(quiz_gen.TRANSCRIPT_PATH)
-        quests = quiz_gen.generate_quiz(transcript)
-        QUIZ_PATH.write_text(json.dumps(quests, indent=2, ensure_ascii=False), encoding="utf-8")
-        return jsonify(quests)
-    except Exception as exc:  
-        return jsonify({"error": str(exc)}), 500
+        source = quiz_gen.load_source(quiz_gen.COMBINED_PATH)
+        slides = json.loads((LECTURE_DIR / "slides_merged.json").read_text(encoding="utf-8"))
+        quiz = quiz_gen.generate_quiz(source, body.get("topics", []), body.get("num_questions", 5))
+        quiz = quiz_gen.attach_evidence(quiz, source, slides)
+        QUIZ_PATH.write_text(json.dumps(quiz, indent=2, ensure_ascii=False), encoding="utf-8")
+        return jsonify(quiz)
+    except SystemExit as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/lecture_files/<path:filename>")
+def lecture_files(filename):
+    return send_from_directory(LECTURE_DIR, filename)
 
 # ── PDF loading ────────────────────────────────────────────────────
 
