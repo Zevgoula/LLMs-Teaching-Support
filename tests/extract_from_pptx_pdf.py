@@ -18,7 +18,7 @@ import fitz  # PyMuPDF
 
 DESC_FILE = "slides_img.json"  # Gemini output
 
-
+# extracts the text and all images from a PDF, saving them to an output folder
 def extract(pdf_path: Path, out_dir: Path, dpi: int = 150, min_image_px: int = 50):
     render_dir = out_dir / "render"            # images for the Gemini step
     all_dir = out_dir / "slides_img_all"       # every slide, for the UI
@@ -58,6 +58,7 @@ def extract(pdf_path: Path, out_dir: Path, dpi: int = 150, min_image_px: int = 5
     print(f"Slides with images: {sum(s['has_image'] for s in slides)} / {len(slides)}")
 
 
+# loads the image descriptions from the json
 def load_descriptions(out_dir: Path) -> dict:
     """Return {slide_number: description} from slides_img.json (Gemini output)."""
     path = out_dir / DESC_FILE
@@ -76,7 +77,7 @@ def load_descriptions(out_dir: Path) -> dict:
     print(f"Loaded descriptions for slides: {sorted(desc_by_slide)}")
     return desc_by_slide
 
-
+# combines the json files text + image descriptions into one file
 def combine(out_dir: Path):
     slides_path = out_dir / "slides_text.json"
     if not slides_path.exists():

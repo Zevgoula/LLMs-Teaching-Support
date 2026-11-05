@@ -34,7 +34,7 @@ Return only valid JSON, with no text before or after it:
 [{{"slide_number": 4, "starts_at_line": 60}}]
 """
 
-
+# strips tags from subtitles
 def read_transcript(transcript_path: Path) -> list[str]:
     """Return caption lines with timing lines, tags and repeats removed."""
     content = transcript_path.read_text(encoding="utf-8")
@@ -48,7 +48,7 @@ def read_transcript(transcript_path: Path) -> list[str]:
             last = text
     return lines
 
-
+# combines slide text with image description
 def slide_body(s: dict) -> str:
     parts = []
     if s["slide_text"]:
@@ -56,13 +56,13 @@ def slide_body(s: dict) -> str:
     parts += s.get("image_descriptions", [])
     return "\n".join(parts)
 
-
+#removes tags from the image descriptions - from gemini web
 def parse_json_reply(text: str):
     text = text.strip()
     text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text).strip()
     return json.loads(text)
 
-
+# prompt
 def get_starts(client, slides: list[dict], lines: list[str]) -> list[dict]:
     numbered = "\n".join(f"{i+1}: {t}" for i, t in enumerate(lines))
     slides_json = json.dumps(
@@ -77,7 +77,7 @@ def get_starts(client, slides: list[dict], lines: list[str]) -> list[dict]:
     )
     return parse_json_reply(response.text)
 
-
+# keeps valid entries 
 def validate(starts: list[dict], slides: list[dict], n_lines: int) -> list[dict]:
     """Keep only valid entries: known slide, line in range, starts increasing."""
     valid_nums = {s["slide_number"] for s in slides}
@@ -95,7 +95,7 @@ def validate(starts: list[dict], slides: list[dict], n_lines: int) -> list[dict]
         last_line = line
     return kept
 
-
+# creates the combined.txt file with the slides and transcript
 def build_document(lines: list[str], slides: list[dict], starts: list[dict]) -> str:
     by_num = {s["slide_number"]: s for s in slides}
     order = [(x["starts_at_line"], x["slide_number"]) for x in starts]

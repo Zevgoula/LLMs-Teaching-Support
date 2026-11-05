@@ -29,7 +29,7 @@ Rules:
 - Use ONLY the source. Do not add outside facts. Skip course-admin text.
 - Each question has exactly 4 options (A, B, C, D) with exactly one correct answer and plausible distractors.
 - "sources" lists the tags the question relies on, copied exactly from the source, e.g. "slide 19" or "lecture line 1179-1230".
-- Cite a small lecture line range that supports the question, ideally under 20 lines.
+- Cite a small lecture line range that supports the question, ideally 20-40 lines.
 - Every question MUST cite at least one lecture line range AND/OR a slide tag.
 - Do not put the answer letter inside the option text.
 
@@ -51,7 +51,7 @@ TOPIC_RULES = """Each of these professor topics MUST get exactly one question, i
 {topics}
 If a professor topic is not covered by the source, still output its question with "found_in_source": false and leave "options" empty, so the professor can see it was not found. Do not invent content for it."""
 
-
+# combined.txt -> stripped string
 def load_source(path: Path) -> str:
     if not path.is_file():
         sys.exit(f"Source not found: {path}")
@@ -60,7 +60,7 @@ def load_source(path: Path) -> str:
         sys.exit("Source is empty.")
     return text
 
-
+# checks for keys
 def parse_json(raw: str) -> list[dict]:
     cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", raw.strip())
     quiz = json.loads(cleaned)
@@ -72,7 +72,7 @@ def parse_json(raw: str) -> list[dict]:
 LECTURE_RE = re.compile(r"^\[lecture line (\d+)-(\d+)\]\n", re.M)
 TAG_LINE_RE = re.compile(r"^lecture line (\d+)-(\d+)$")
 
-
+# returns dict {1179: "text of line 1179"} ...
 def parse_transcript_lines(source: str) -> dict[int, str]:
     """Map each transcript line number to its text, from the [lecture line A-B] blocks."""
     lines = {}
@@ -81,13 +81,11 @@ def parse_transcript_lines(source: str) -> dict[int, str]:
         start, end_marker = int(m.group(1)), int(m.group(2))
         end = matches[i + 1].start() if i + 1 < len(matches) else len(source)
         body = source[m.end():end].strip("\n").split("\n")
-        # The block's lines map to numbers start..end_marker; the transcript
-        # line count can differ from the text line count if a sentence wraps,
-        # so number the block's lines in order from its start.
         for offset, text in enumerate(body):
             lines[start + offset] = text
     return lines
 
+# returns dict {slide 1: "text of slide 1"} ...
 def parse_slide_blocks(source: str) -> dict[str, str]:
     """Map 'slide N' to only its own text, stopping at the next [ tag."""
     blocks = {}
@@ -109,7 +107,7 @@ def shuffle_options(q: dict) -> dict:
     q["answer_index"] = q["options"].index(correct)
     return q
 
-
+# returns the text of a lecture line range, or a message if not found
 def transcript_range_text(tag: str, lines: dict[int, str]) -> str:
     m = TAG_LINE_RE.match(tag)
     if not m:
@@ -119,6 +117,7 @@ def transcript_range_text(tag: str, lines: dict[int, str]) -> str:
     return "\n".join(found) if found else "(tag not found in source)"
 
 
+# attaches evidence to each question
 def attach_evidence(quiz: list[dict], source: str, slides: list[dict]) -> list[dict]:
     slide_blocks = parse_slide_blocks(source)
     transcript = parse_transcript_lines(source)
