@@ -84,7 +84,8 @@ def main():
     print("eisai mesa sti main")
     p = argparse.ArgumentParser(description="Turn a WAV recording into a YouTube video.")
     p.add_argument("audio", type=Path, nargs="?",
-                   default=USER_FILES_DIR / "audio" / "recording.wav",
+                   # default=USER_FILES_DIR / "audio" / "recording.wav",
+                   default=USER_FILES_DIR / "audio" / "avouris-mathesis.wav",
                    help="Path to a .wav file (default: %(default)s)")
     p.add_argument("--image", type=Path,
                    default=Path(__file__).resolve().parent.parent / "cover.png")

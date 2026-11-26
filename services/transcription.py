@@ -1,75 +1,94 @@
 """Local, offline speech-to-text using OpenAI Whisper.
 
-The model used to be loaded and the transcription started at *import* time,
-which made this module impossible to reuse. It is now a plain function plus a
-small ``python -m`` CLI.
+Run it directly to transcribe a file::
 
-Run it directly to transcribe the newest recording::
-
-    python -m services.transcription
-    python -m services.transcription data/user_files/recording_20260930_133500.wav
+    python -m services.transcription data/user_files/audio/avouris.wav
+    python -m services.transcription            # newest recording
 """
 
 import sys
+import time
 from pathlib import Path
 from typing import Optional
+
+import torch
 
 sys.path.append(str(Path(__file__).parent.parent))  # noqa: E402
 from config import USER_FILES_DIR
 
-#: Whisper model size. "base" is fast/lightweight, "small"/"medium" are more
-#: accurate for Greek but slower.
-DEFAULT_MODEL_SIZE = "base"
+DEFAULT_AUDIO = USER_FILES_DIR / "audio" / "avouris-mathesis.wav"
+DEFAULT_MODEL_SIZE = "small"
 DEFAULT_LANGUAGE = "el"
 
-_model = None
+_models = {}  # cache per model size, so tiny/base/small/medium are kept separately
 
 
 def load_model(model_size: str = DEFAULT_MODEL_SIZE):
-    """Load (and cache) a Whisper model."""
-    global _model
-    if _model is None:
+    """Load (and cache) a Whisper model of the given size."""
+    if model_size not in _models:
         import whisper
 
-        print(f"Loading local Whisper model '{model_size}' (CPU/GPU)...")
-        _model = whisper.load_model(model_size)
-    return _model
+        print(f"Loading local Whisper model '{model_size}'...")
+        _models[model_size] = whisper.load_model(model_size)
+    return _models[model_size]
 
 
 def transcribe(
     audio_path: Path,
     language: str = DEFAULT_LANGUAGE,
     model_size: str = DEFAULT_MODEL_SIZE,
-) -> str:
-    """Transcribe ``audio_path`` and return the plain-text transcript."""
+) -> dict:
+    """Transcribe ``audio_path``.
+
+    Returns a dict with the transcript, the wall-clock time of the
+    transcription call only (model loading excluded), and the peak GPU
+    memory allocated by PyTorch during that call.
+    """
     audio_path = Path(audio_path)
     if not audio_path.exists():
         raise FileNotFoundError(f"Audio file not found: {audio_path}")
 
-    model = load_model(model_size)
-    result = model.transcribe(str(audio_path), language=language)
-    return result["text"].strip()
+    model = load_model(model_size)  # loaded before the timer starts
 
+    use_cuda = torch.cuda.is_available()
+    if use_cuda:
+        torch.cuda.synchronize()
+        torch.cuda.reset_peak_memory_stats()
 
-def latest_recording(directory: Path = USER_FILES_DIR) -> Optional[Path]:
-    """Return the most recent ``*.wav`` in ``directory`` (or ``None``)."""
-    recordings = sorted(
-        Path(directory).glob("*.wav"), key=lambda p: p.stat().st_mtime
-    )
-    return recordings[-1] if recordings else None
+    t0 = time.perf_counter()
+    result = model.transcribe(str(audio_path), language=language, fp16=use_cuda)
+    if use_cuda:
+        torch.cuda.synchronize()
+    elapsed = time.perf_counter() - t0
+
+    peak_gb = torch.cuda.max_memory_allocated() / 1e9 if use_cuda else None
+
+    return {
+        "model": model_size,
+        "device": "cuda" if use_cuda else "cpu",
+        "precision": "fp16" if use_cuda else "fp32",
+        "text": result["text"].strip(),
+        "seconds": round(elapsed, 2),
+        "peak_gpu_gb": round(peak_gb, 3) if peak_gb is not None else None,
+    }
+
 
 
 def main(argv: Optional[list] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
 
-    audio_path = Path(argv[0]) if argv else latest_recording()
+    audio_path = DEFAULT_AUDIO
     if audio_path is None:
         print(f"No recording found in {USER_FILES_DIR}. Record one first.")
         return 1
 
     print(f"Transcribing {audio_path} ...")
+    info = transcribe(audio_path)
     print("\n--- Transcription Complete ---")
-    print(transcribe(audio_path))
+    print(f"model={info['model']} device={info['device']} "
+          f"precision={info['precision']} time={info['seconds']}s "
+          f"peak_gpu={info['peak_gpu_gb']} GB")
+    print(info["text"])
     return 0
 
 

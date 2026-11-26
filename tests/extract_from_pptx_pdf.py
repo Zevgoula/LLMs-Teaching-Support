@@ -3,8 +3,7 @@ Lecture pipeline in one script.
 
 Menu:
   1) Extract: split a PDF into slide text and full-slide PNGs (for slides with images)
-  2) Check:   confirm the Gemini output covers every slide with an image
-  3) Combine: merge slides_text.json and slides_img.json into slides_merged.json
+  2) Combine: merge slides_text.json and slides_img.json into slides_merged.json
 
 Usage:
   python lecture_pipeline.py
@@ -39,7 +38,7 @@ def extract(pdf_path: Path, out_dir: Path, dpi: int = 150, min_image_px: int = 5
         all_out = all_dir / f"slide_{i:02d}.png"
         page.get_pixmap(dpi=dpi).save(all_out)
 
-        # Full-slide PNG for image slides only, used by the Gemini step
+        # Full-slide PNG for image slides only
         if has_image:
             page.get_pixmap(dpi=dpi).save(render_dir / f"slide_{i:02d}.png")
 
